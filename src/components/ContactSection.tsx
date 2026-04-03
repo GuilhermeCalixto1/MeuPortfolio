@@ -31,7 +31,6 @@ const ContactSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               placeholder="Seu nome"
@@ -62,38 +61,38 @@ const ContactSection = () => {
             </Button>
           </form>
 
-          {/* Info */}
           <div className="flex flex-col justify-center space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              Tem um projeto em mente ou quer trocar uma ideia? Manda uma
-              mensagem que respondo o mais rápido possível!
+              Estou à disposição para uma entrevista e muito motivado para
+              contribuir com a equipe. Manda uma mensagem que respondo o mais
+              rápido possível!
             </p>
 
             <div className="space-y-4">
               <a
-                href="mailto:contato@seusite.com"
+                href="mailto:guicalixto123@hotmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail size={20} className="text-primary" />
-                contato@seusite.com
+                guicalixto123@hotmail.com
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/GuilhermeCalixto1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github size={20} className="text-primary" />
-                github.com/seuusuario
+                github.com/GuilhermeCalixto1
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/guilhermecalixto1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin size={20} className="text-primary" />
-                linkedin.com/in/seuusuario
+                linkedin.com/in/guilhermecalixto1
               </a>
             </div>
           </div>

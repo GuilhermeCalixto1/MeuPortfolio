@@ -1,9 +1,9 @@
-import { Code2, Rocket, Users } from "lucide-react";
+import { GraduationCap, Wrench, Target } from "lucide-react";
 
 const highlights = [
-  { icon: Code2, label: "5+ anos", desc: "de experiência" },
-  { icon: Rocket, label: "50+", desc: "projetos entregues" },
-  { icon: Users, label: "30+", desc: "clientes satisfeitos" },
+  { icon: GraduationCap, label: "UBM", desc: "Engenharia de Software" },
+  { icon: Wrench, label: "4 anos", desc: "experiência industrial (CSN)" },
+  { icon: Target, label: "Foco", desc: "React & Web Moderno" },
 ];
 
 const AboutSection = () => {
@@ -15,25 +15,26 @@ const AboutSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Avatar placeholder */}
           <div className="flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl glass glow flex items-center justify-center">
               <span className="text-6xl">👨‍💻</span>
             </div>
           </div>
 
-          {/* Text */}
           <div>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Sou um desenvolvedor web fullstack apaixonado por criar soluções
-              digitais elegantes e funcionais. Com experiência em React,
-              TypeScript, Node.js e diversas outras tecnologias modernas, busco
-              sempre entregar código limpo, performático e de fácil manutenção.
+              Olá! Meu nome é Guilherme Calixto, tenho 26 anos e sou estudante
+              de Engenharia de Software pela UBM. Estou em transição de carreira
+              vindo da área industrial — atuo há 4 anos na CSN como mecânico,
+              experiência que me proporcionou uma base sólida de disciplina,
+              resolução de problemas e trabalho em equipe.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Acredito que a tecnologia deve servir as pessoas, por isso foco em
-              criar interfaces intuitivas e experiências que façam diferença no
-              dia a dia dos usuários.
+              Busco minha primeira oportunidade na área de TI para aplicar essa
+              maturidade profissional somada aos meus conhecimentos técnicos.
+              Atualmente, foco meus estudos em React e desenvolvimento Web
+              Moderno, criando projetos funcionais com React, JavaScript,
+              Bootstrap e HTML.
             </p>
 
             <div className="grid grid-cols-3 gap-4">

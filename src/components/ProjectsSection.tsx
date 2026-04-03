@@ -4,46 +4,44 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Plataforma completa de e-commerce com carrinho, pagamentos e painel admin.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    demo: "#",
-    code: "#",
+    title: "Gerenciador de Tarefas React",
+    description:
+      "SPA com React Router DOM, persistência via localStorage, estilização com Tailwind CSS e gerenciamento de estado completo (criar, listar, deletar e concluir tarefas).",
+    tags: ["React", "Tailwind CSS", "React Router DOM", "localStorage"],
+    demo: "https://gerenciador-de-tarefas-react-six.vercel.app",
+    code: "https://github.com/GuilhermeCalixto1",
   },
   {
-    title: "Task Manager App",
-    description: "App de gerenciamento de tarefas com drag & drop e colaboração em tempo real.",
-    tags: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
-    demo: "#",
-    code: "#",
+    title: "Orçamento Pessoal",
+    description:
+      "Aplicativo web para controle financeiro pessoal com cadastro, consulta e gerenciamento de despesas. Utiliza POO em JavaScript e persistência com LocalStorage.",
+    tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+    demo: "https://orcamento-pessoal-lilac.vercel.app/",
+    code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
   },
   {
-    title: "Dashboard Analytics",
-    description: "Dashboard interativo com gráficos dinâmicos e relatórios em tempo real.",
-    tags: ["React", "D3.js", "Tailwind", "REST API"],
-    demo: "#",
-    code: "#",
+    title: "Controle de Fornecedores (CRUD)",
+    description:
+      "Aplicação Fullstack que consome uma API REST real hospedada na nuvem. CRUD completo com Vite, Axios e padrão de camadas.",
+    tags: ["JavaScript", "Vite", "Axios", "Node.js", "CSS3"],
+    demo: "https://projeto-crud-eta.vercel.app",
+    code: "https://github.com/GuilhermeCalixto1/Projeto-CRUD",
   },
   {
-    title: "Social Media Clone",
-    description: "Clone de rede social com feed, stories, chat e sistema de notificações.",
-    tags: ["React", "Firebase", "Tailwind", "PWA"],
-    demo: "#",
-    code: "#",
+    title: "Calculadora",
+    description:
+      "Calculadora funcional e responsiva com tema Dark/Purple, CSS Grid, tratamento de erros e design adaptável a diferentes tamanhos de tela.",
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    demo: "https://projeto-calculadora-pied-nine.vercel.app",
+    code: "https://github.com/GuilhermeCalixto1",
   },
   {
-    title: "Blog CMS",
-    description: "Sistema de blog com editor rich-text, SEO otimizado e multi-idioma.",
-    tags: ["Next.js", "MDX", "Vercel", "PostgreSQL"],
-    demo: "#",
-    code: "#",
-  },
-  {
-    title: "Fitness Tracker",
-    description: "App para rastreamento de treinos com gráficos de progresso e metas.",
-    tags: ["React Native", "TypeScript", "Supabase"],
-    demo: "#",
-    code: "#",
+    title: "Game Mata Mosquito",
+    description:
+      "Jogo interativo em JavaScript puro com geração randômica de mosquitos, sistema de vidas, cronômetro e 3 níveis de dificuldade. Responsivo e divertido!",
+    tags: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript"],
+    demo: "https://projeto-app-mata-mosquito.vercel.app/",
+    code: "https://github.com/GuilhermeCalixto1/Projeto-AppMataMosquito",
   },
 ];
 
@@ -61,7 +59,6 @@ const ProjectsSection = () => {
               key={project.title}
               className="glass rounded-2xl overflow-hidden group hover:glow hover:border-primary/50 transition-all duration-300"
             >
-              {/* Image placeholder */}
               <div className="h-44 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                 <span className="text-4xl opacity-50 group-hover:scale-110 transition-transform duration-300">
                   🖥️
@@ -88,13 +85,13 @@ const ProjectsSection = () => {
 
                 <div className="flex gap-2">
                   <Button asChild variant="outline" size="sm" className="flex-1">
-                    <a href={project.demo}>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={14} />
                       Demo
                     </a>
                   </Button>
                   <Button asChild variant="ghost" size="sm" className="flex-1">
-                    <a href={project.code}>
+                    <a href={project.code} target="_blank" rel="noopener noreferrer">
                       <Github size={14} />
                       Código
                     </a>
