@@ -1,11 +1,20 @@
 const skillGroups = [
   {
     category: "Desenvolvimento",
-    skills: ["JavaScript", "C", "CSS", "Bootstrap", "HTML", "React", "Tailwind", "Node.js"],
+    skills: [
+      "JavaScript",
+      "C",
+      "CSS",
+      "Bootstrap",
+      "HTML",
+      "React",
+      "Tailwind",
+      "Node.js",
+    ],
   },
   {
     category: "Ferramentas",
-    skills: ["Git", "GitHub"],
+    skills: ["Git", "GitHub", "Supabase", "Vite", "Axios", "Vercel"],
   },
   {
     category: "Metodologias",

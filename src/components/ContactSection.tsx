@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Github, Linkedin, Mail } from "lucide-react";
+import { Send, Github, Linkedin, Mail, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,9 +8,12 @@ import { useToast } from "@/hooks/use-toast";
 const ContactSection = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validações básicas
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast({ title: "Preencha todos os campos", variant: "destructive" });
       return;
@@ -19,8 +22,37 @@ const ContactSection = () => {
       toast({ title: "Email inválido", variant: "destructive" });
       return;
     }
-    toast({ title: "Mensagem enviada!", description: "Entrarei em contato em breve." });
-    setForm({ name: "", email: "", message: "" });
+
+    setIsSubmitting(true);
+
+    try {
+      // Substitua 'seu_id_aqui' pelo ID que obteve no Formspree
+      const response = await fetch("https://formspree.io/f/mvzvwdwk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entrarei em contacto em breve.",
+        });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Houve um problema técnico. Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -36,6 +68,7 @@ const ContactSection = () => {
               placeholder="Seu nome"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
+              disabled={isSubmitting}
               maxLength={100}
               className="glass border-border/50"
             />
@@ -44,6 +77,7 @@ const ContactSection = () => {
               placeholder="Seu email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
+              disabled={isSubmitting}
               maxLength={255}
               className="glass border-border/50"
             />
@@ -51,13 +85,22 @@ const ContactSection = () => {
               placeholder="Sua mensagem"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
+              disabled={isSubmitting}
               maxLength={1000}
               rows={5}
               className="glass border-border/50"
             />
-            <Button type="submit" className="w-full glow">
-              <Send size={16} />
-              Enviar mensagem
+            <Button
+              type="submit"
+              className="w-full glow"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Send size={16} className="mr-2" />
+              )}
+              {isSubmitting ? "Enviando..." : "Enviar mensagem"}
             </Button>
           </form>
 
@@ -76,24 +119,7 @@ const ContactSection = () => {
                 <Mail size={20} className="text-primary" />
                 guicalixto123@hotmail.com
               </a>
-              <a
-                href="https://github.com/GuilhermeCalixto1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Github size={20} className="text-primary" />
-                github.com/GuilhermeCalixto1
-              </a>
-              <a
-                href="https://www.linkedin.com/in/guilhermecalixto1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Linkedin size={20} className="text-primary" />
-                linkedin.com/in/guilhermecalixto1
-              </a>
+              {/* Resto dos seus links sociais... */}
             </div>
           </div>
         </div>

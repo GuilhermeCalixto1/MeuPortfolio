@@ -1,4 +1,5 @@
 import { GraduationCap, Wrench, Target } from "lucide-react";
+import profileImg from "@/images/877e467e-1f49-408a-8bfd-63ab97b800f8.jpeg";
 
 const highlights = [
   { icon: GraduationCap, label: "UBM", desc: "Engenharia de Software" },
@@ -16,8 +17,12 @@ const AboutSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl glass glow flex items-center justify-center">
-              <span className="text-6xl">👨‍💻</span>
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl glass glow overflow-hidden">
+              <img
+                src={profileImg}
+                alt="Guilherme Calixto"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -39,10 +44,7 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-3 gap-4">
               {highlights.map((h) => (
-                <div
-                  key={h.label}
-                  className="glass rounded-xl p-4 text-center"
-                >
+                <div key={h.label} className="glass rounded-xl p-4 text-center">
                   <h.icon className="mx-auto mb-2 text-primary" size={24} />
                   <p className="font-bold text-lg">{h.label}</p>
                   <p className="text-xs text-muted-foreground">{h.desc}</p>
