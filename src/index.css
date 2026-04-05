@@ -60,6 +60,10 @@
 }
 
 @layer utilities {
+  .fill-mode-forwards {
+    animation-fill-mode: forwards;
+  }
+
   .glass {
     @apply bg-card/60 backdrop-blur-lg border border-border/50;
   }

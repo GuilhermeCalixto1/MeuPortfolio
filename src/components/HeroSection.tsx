@@ -1,30 +1,61 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WaveReveal from "@/components/animata/text/wave-reveal";
+import TextPressure from "./TextPressure";
 
 const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
+      <div className="w-full h-full md:h-36 mb-8">
+        <TextPressure
+          text="BEM VINDO AO MEU PORTFÓLIO"
+          className="gradient-text"
+          textColor="transparent"
+          scale={true}
+          flex={true}
+        />
+      </div>
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          Olá, eu sou
-        </p>
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">
-          <span className="gradient-text">Guilherme Calixto</span>
+        <WaveReveal
+          text="Meu nome é"
+          mode="word"
+          duration="1100ms"
+          delay={150}
+          className="!px-0"
+          letterClassName="text-3xl text-muted-foreground"
+        />
+        <h1 className="mb-4">
+          <WaveReveal
+            text="Guilherme Calixto"
+            mode="word"
+            duration="1100ms"
+            delay={150}
+            className="!px-0"
+            letterClassName="gradient-text  font-bold"
+          />
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-          Estudante de Engenharia de Software
-        </p>
-        <p className="text-muted-foreground max-w-lg mx-auto mb-10 leading-relaxed">
-          Em transição de carreira para a área de TI, focado em React e
-          desenvolvimento Web Moderno. Transformo ideias em código funcional e
-          bem estruturado.
-        </p>
+        <WaveReveal
+          text="Estudante de Engenharia de Software"
+          mode="word"
+          duration="1100ms"
+          delay={500}
+          className="mb-8 !px-0"
+          letterClassName="text-sm md:text-2xl text-muted-foreground"
+        />
+        <WaveReveal
+          text="Em transição de carreira para a área de TI, focado em React e desenvolvimento Web Moderno. Transformo ideias em código funcional e bem estruturado."
+          mode="word"
+          duration="1100ms"
+          delay={750}
+          className="max-w-lg mx-auto mb-10 !px-0"
+          letterClassName="text-sm text-muted-foreground leading-relaxed"
+        />
         <div className="flex gap-4 justify-center">
           <Button asChild size="lg" className="glow">
             <a href="#contact">Fale comigo</a>

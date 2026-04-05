@@ -1,5 +1,6 @@
 import { GraduationCap, Wrench, Target } from "lucide-react";
-import profileImg from "@/images/877e467e-1f49-408a-8bfd-63ab97b800f8.jpeg";
+import profileImg from "@/images/Adobe Express - file.png";
+import ProfileCard from "./ProfileCard";
 
 const highlights = [
   { icon: GraduationCap, label: "UBM", desc: "Engenharia de Software" },
@@ -11,17 +12,23 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-muted-foreground">
           Sobre <span className="gradient-text">mim</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl glass glow overflow-hidden">
-              <img
-                src={profileImg}
-                alt="Guilherme Calixto"
-                className="w-full h-full object-cover"
+            <div className="w-[300px] h-[420px] md:w-[360px] md:h-[500px] rounded-2xl glass glow overflow-hidden flex items-center justify-center">
+              <ProfileCard
+                name="Guilherme Calixto"
+                title="Estudante de Engenharia de Software"
+                avatarUrl={profileImg}
+                handle="GuiCalixto"
+                onContactClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               />
             </div>
           </div>
