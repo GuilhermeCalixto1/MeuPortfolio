@@ -36,10 +36,10 @@ const AboutSection = () => {
           <div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Olá! Meu nome é Guilherme Calixto, tenho 26 anos e sou estudante
-              de Engenharia de Software pela UBM. Estou em transição de carreira
-              vindo da área industrial — atuo há 4 anos na CSN como mecânico,
-              experiência que me proporcionou uma base sólida de disciplina,
-              resolução de problemas e trabalho em equipe.
+              no 2º semestre de Engenharia de Software pela UBM. Estou em
+              transição de carreira vindo da área industrial — atuo há 4 anos na
+              CSN como mecânico, experiência que me proporcionou uma base sólida
+              de disciplina, resolução de problemas e trabalho em equipe.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Busco minha primeira oportunidade na área de TI para aplicar essa
