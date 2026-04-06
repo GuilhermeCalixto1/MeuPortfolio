@@ -9,8 +9,8 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
-      <div className="w-full h-full md:h-36 mb-8">
+      <div className="md:h-100 absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
+      <div className="w-full h-full md:h-80 mb-8">
         <TextPressure
           text="BEM VINDO AO MEU PORTFÓLIO"
           className="gradient-text"
