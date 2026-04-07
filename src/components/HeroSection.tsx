@@ -2,26 +2,45 @@ import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WaveReveal from "@/components/animata/text/wave-reveal";
 import TextPressure from "./TextPressure";
+import ASCIIText from "./ASCIIText";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className={`relative min-h-screen flex flex-col items-center overflow-hidden ${isMobile ? "justify-start pt-16" : "justify-center"}`}
     >
       <div className="md:h-100 absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
-      <div className="w-full h-full md:h-80 mb-8">
-        <TextPressure
-          text="BEM VINDO AO MEU PORTFÓLIO"
-          className="gradient-text"
-          textColor="transparent"
-          scale={true}
-          flex={true}
-        />
-      </div>
+      
+      {isMobile ? (
+        <div className="w-full h-[200px] mb-4">
+          <ASCIIText
+            text="BEM VINDO!"
+            asciiFontSize={6}
+            textFontSize={80}
+            textColor="#fdf9f3"
+            planeBaseHeight={4}
+            enableWaves={true}
+          />
+        </div>
+      ) : (
+        <div className="w-full h-full md:h-80 mb-8">
+          <TextPressure
+            text="BEM VINDO AO MEU PORTFÓLIO"
+            className="gradient-text"
+            textColor="transparent"
+            scale={true}
+            flex={true}
+          />
+        </div>
+      )}
+      
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+      <div className={`relative z-10 text-center px-4 max-w-3xl mx-auto ${isMobile ? "mt-8" : ""}`}>
         <WaveReveal
           text="Meu nome é"
           mode="word"
