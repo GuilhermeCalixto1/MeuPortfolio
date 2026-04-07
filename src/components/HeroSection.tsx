@@ -11,21 +11,24 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className={`relative min-h-screen flex flex-col items-center overflow-hidden ${isMobile ? "justify-start pt-16" : "justify-center"}`}
+      className={`relative min-h-screen flex flex-col items-center overflow-hidden ${isMobile ? "justify-start" : "justify-center"}`}
     >
       <div className="md:h-100 absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
-      
+
       {isMobile ? (
-        <div className="w-full h-[200px] mb-4">
-          <ASCIIText
-            text="BEM VINDO!"
-            asciiFontSize={6}
-            textFontSize={80}
-            textColor="#fdf9f3"
-            planeBaseHeight={4}
-            enableWaves={true}
-          />
-        </div>
+        <>
+          <div className="absolute inset-x-0 top-0 z-20 h-[340px] sm:h-[260px] pointer-events-none">
+            <ASCIIText
+              text="BEM VINDO!"
+              asciiFontSize={6}
+              textFontSize={300}
+              textColor="#fdf9f3"
+              planeBaseHeight={4}
+              enableWaves={true}
+            />
+          </div>
+          <div className="h-[220px] sm:h-[260px] w-full flex-shrink-0" />
+        </>
       ) : (
         <div className="w-full h-full md:h-80 mb-8">
           <TextPressure
@@ -37,10 +40,10 @@ const HeroSection = () => {
           />
         </div>
       )}
-      
+
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
-      <div className={`relative z-10 text-center px-4 max-w-3xl mx-auto ${isMobile ? "mt-8" : ""}`}>
+      <div className={`relative z-10 text-center px-4 max-w-3xl mx-auto ${isMobile ? "mt-0" : ""}`}>
         <WaveReveal
           text="Meu nome é"
           mode="word"

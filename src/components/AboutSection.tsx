@@ -18,7 +18,7 @@ const AboutSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
-            <div className="w-[280px] h-[380px] md:w-[390px] md:h-[500px] rounded-2xl glass glow overflow-hidden flex items-center justify-center">
+            <div className="w-[280px] h-[380px] md:w-[390px] md:h-[510px] rounded-2xl glass glow overflow-hidden flex items-center justify-center">
               <ProfileCard
                 name="Guilherme Calixto"
                 title="Estudante de Engenharia de Software"
