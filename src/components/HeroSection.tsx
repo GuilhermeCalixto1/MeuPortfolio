@@ -17,7 +17,7 @@ const HeroSection = () => {
 
       {isMobile ? (
         <>
-          <div className="absolute inset-x-0 top-0 z-20 h-[340px] sm:h-[260px] pointer-events-none">
+          <div className="absolute inset-x-0 top-0 z-20 h-[350px] sm:h-[260px] pointer-events-none">
             <ASCIIText
               text="BEM VINDO!"
               asciiFontSize={6}
@@ -35,8 +35,9 @@ const HeroSection = () => {
             text="BEM VINDO AO MEU PORTFÓLIO"
             className="gradient-text"
             textColor="transparent"
+            width={false}
             scale={true}
-            flex={true}
+            flex={false}
           />
         </div>
       )}

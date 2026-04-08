@@ -250,7 +250,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
             initial={{ opacity: 0, y: -36, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
-              delay: index * 0.15,
+              delay: index * 0.08,
               duration: 0.5,
               ease: "easeOut",
             }}

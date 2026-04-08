@@ -534,7 +534,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   return (
     <div
       ref={wrapRef}
-      className={`relative touch-none ${className}`.trim()}
+      className={`relative touch-none w-full h-full ${className}`.trim()}
       style={
         {
           perspective: "500px",
@@ -553,13 +553,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           }}
         />
       )}
-      <div ref={shellRef} className="relative z-[1] group">
+      <div ref={shellRef} className="relative z-[1] group w-full h-full">
         <section
           className="grid relative overflow-hidden"
           style={{
-            height: "80svh",
+            width: "100%",
+            height: "100%",
             maxHeight: "540px",
-            aspectRatio: "0.718",
+            maxWidth: "390px",
+            margin: "0 auto",
+            aspectRatio: "390 / 510",
             borderRadius: cardRadius,
             backgroundBlendMode: "color-dodge, normal, normal, normal",
             boxShadow:
@@ -769,7 +772,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 <h3
                   className="font-semibold m-0"
                   style={{
-                    fontSize: "min(5svh, 3em)",
+                    fontSize: "clamp(1.45rem, 6vw, 3rem)",
+                    lineHeight: 1.08,
+                    paddingInline: "14px",
                     backgroundImage:
                       "linear-gradient(to bottom, #fff, #6f6fbe)",
                     backgroundSize: "1em 1.5em",
@@ -785,11 +790,13 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   {name}
                 </h3>
                 <p
-                  className="font-semibold whitespace-nowrap mx-auto w-min"
+                  className="font-semibold mx-auto text-center"
                   style={{
                     position: "relative",
-                    top: "-12px",
-                    fontSize: "16px",
+                    top: "-8px",
+                    maxWidth: "88%",
+                    lineHeight: 1.2,
+                    fontSize: "clamp(0.82rem, 2.8vw, 1rem)",
                     margin: "0 auto",
                     backgroundImage:
                       "linear-gradient(to bottom, #fff, #4a4ac0)",
