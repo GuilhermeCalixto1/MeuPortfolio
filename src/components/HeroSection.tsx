@@ -17,7 +17,7 @@ const HeroSection = () => {
 
       {isMobile ? (
         <>
-          <div className="absolute inset-x-0 top-0 z-20 h-[350px] sm:h-[220px] pointer-events-none">
+          <div className="absolute inset-x-0 top-0 z-20 h-[320px] sm:h-[220px] pointer-events-none">
             <ASCIIText
               text="BEM VINDO!"
               asciiFontSize={6}
