@@ -17,7 +17,7 @@ const HeroSection = () => {
 
       {isMobile ? (
         <>
-          <div className="absolute inset-x-0 top-0 z-20 h-[350px] sm:h-[260px] pointer-events-none">
+          <div className="absolute inset-x-0 top-0 z-20 h-[350px] sm:h-[220px] pointer-events-none">
             <ASCIIText
               text="BEM VINDO!"
               asciiFontSize={6}
@@ -44,7 +44,9 @@ const HeroSection = () => {
 
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
-      <div className={`relative z-10 text-center px-4 max-w-3xl mx-auto ${isMobile ? "mt-0" : ""}`}>
+      <div
+        className={`relative z-10 text-center px-4 max-w-3xl mx-auto ${isMobile ? "mt-0" : ""}`}
+      >
         <WaveReveal
           text="Meu nome é"
           mode="word"
