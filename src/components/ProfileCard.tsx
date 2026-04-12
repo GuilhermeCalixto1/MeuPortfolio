@@ -675,7 +675,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   transformOrigin: "center center",
                   transform: `
       translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 10px))
-      translateY(calc(-50% + (var(--pointer-from-top) - 0.5) * 10px))
+      translateY(calc(-50% + (var(--pointer-from-top) - 0.5) * 10px + 18px))
       translateZ(20px)
     `.replace(/\s+/g, " "),
                   borderRadius: cardRadius,
@@ -767,7 +767,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             >
               <div
                 className="w-full absolute flex flex-col"
-                style={{ top: "3em", display: "flex", gridArea: "auto" }}
+                style={{ top: "1.1em", display: "flex", gridArea: "auto" }}
               >
                 <h3
                   className="font-semibold m-0"
@@ -793,11 +793,11 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   className="font-semibold mx-auto text-center"
                   style={{
                     position: "relative",
-                    top: "-8px",
+                    top: "0px",
                     maxWidth: "88%",
                     lineHeight: 1.2,
                     fontSize: "clamp(0.82rem, 2.8vw, 1rem)",
-                    margin: "0 auto",
+                    margin: "8px auto 0",
                     backgroundImage:
                       "linear-gradient(to bottom, #fff, #4a4ac0)",
                     backgroundSize: "1em 1.5em",
