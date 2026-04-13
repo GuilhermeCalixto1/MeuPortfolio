@@ -4,7 +4,7 @@ Formulário de cadastro com validação em tempo real usando JavaScript e Expres
 
 ## 📸 Preview
 
-![Validação de Formulário](/readmes/validacao.png)
+![Validação de Formulário](/readmes/validacao.webp)
 
 ## 🚀 Funcionalidades
 

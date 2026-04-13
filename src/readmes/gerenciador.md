@@ -4,7 +4,7 @@ Aplicativo para gerenciamento de tarefas diárias, com foco em prática de React
 
 ## 📸 Preview
 
-![Demonstração do Gerenciador de Tarefas](/readmes/gerenciador.png)
+![Demonstração do Gerenciador de Tarefas](/readmes/gerenciador.webp)
 
 ## 🚀 Funcionalidades
 

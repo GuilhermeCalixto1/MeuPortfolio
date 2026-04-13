@@ -15,6 +15,8 @@ interface LineWavesProps {
   color3?: "#636166";
   enableMouseInteraction?: boolean;
   mouseInfluence?: number;
+  paused?: boolean;
+  targetFps?: number;
 }
 
 function hexToVec3(hex: string): [number, number, number] {
@@ -158,6 +160,8 @@ export default function LineWaves({
   color3 = "#636166",
   enableMouseInteraction = true,
   mouseInfluence = 2.0,
+  paused = false,
+  targetFps = 30,
 }: LineWavesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -240,12 +244,19 @@ export default function LineWaves({
     }
 
     let animationFrameId: number;
+    let lastFrameTime = 0;
+    const frameInterval = 1000 / Math.max(1, targetFps);
 
     function update(time: number) {
       animationFrameId = requestAnimationFrame(update);
 
       // FIX 3: Garantir que nada é executado sem o program estar pronto
       if (!program || !program.uniforms) return;
+
+      if (paused || document.hidden) return;
+
+      if (time - lastFrameTime < frameInterval) return;
+      lastFrameTime = time;
 
       program.uniforms.uTime.value = time * 0.001;
 
@@ -291,6 +302,8 @@ export default function LineWaves({
     color3,
     enableMouseInteraction,
     mouseInfluence,
+    paused,
+    targetFps,
   ]);
 
   return <div ref={containerRef} className="w-full h-full" />;

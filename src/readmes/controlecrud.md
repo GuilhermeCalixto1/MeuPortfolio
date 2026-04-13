@@ -4,8 +4,8 @@ Aplicação para gerenciamento de parceiros e fornecedores com CRUD completo e i
 
 ## 📸 Preview
 
-![Controle CRUD - Tela 1](/readmes/crud.png)
-![Controle CRUD - Tela 2](/readmes/crud2.png)
+![Controle CRUD - Tela 1](/readmes/crud.webp)
+![Controle CRUD - Tela 2](/readmes/crud2.webp)
 
 ## 🚀 Funcionalidades
 

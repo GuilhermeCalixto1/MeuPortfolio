@@ -1,5 +1,5 @@
 import { GraduationCap, Wrench, Target } from "lucide-react";
-import profileImg from "@/images/Adobe Express - file.png";
+import profileImg from "@/images/Adobe Express - file.webp";
 import ProfileCard from "./ProfileCard";
 
 const highlights = [

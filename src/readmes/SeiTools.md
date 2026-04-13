@@ -4,8 +4,8 @@ Plataforma empresarial para controle de inventário, empréstimos e auditoria op
 
 ## 📸 Preview
 
-![SeiTools - Login](/readmes/SeiTools1.png)
-![SeiTools - Dashboard](/readmes/SeiTools2.png)
+![SeiTools - Login](/readmes/SeiTools1.webp)
+![SeiTools - Dashboard](/readmes/SeiTools2.webp)
 
 ## 🚀 Funcionalidades
 

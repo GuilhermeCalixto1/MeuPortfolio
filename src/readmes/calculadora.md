@@ -4,7 +4,7 @@ Calculadora funcional e responsiva para prática de lógica de programação e e
 
 ## 📸 Preview
 
-![Calculadora Web](/readmes/calculadora.png)
+![Calculadora Web](/readmes/calculadora.webp)
 
 ## 🚀 Funcionalidades
 

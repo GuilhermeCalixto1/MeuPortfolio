@@ -4,8 +4,8 @@ Aplicativo para controle financeiro pessoal com cadastro, consulta e filtro de d
 
 ## 📸 Preview
 
-![Orçamento Pessoal - Tela 1](/readmes/orcamento.png)
-![Orçamento Pessoal - Tela 2](/readmes/orcamento2.png)
+![Orçamento Pessoal - Tela 1](/readmes/orcamento.webp)
+![Orçamento Pessoal - Tela 2](/readmes/orcamento2.webp)
 
 ## 🚀 Funcionalidades
 

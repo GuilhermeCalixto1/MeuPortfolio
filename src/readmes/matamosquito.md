@@ -4,8 +4,8 @@ Jogo interativo em JavaScript puro no qual o objetivo é eliminar mosquitos dent
 
 ## 📸 Preview
 
-![Mata Mosquito - Tela Inicial](/readmes/matamosquito.png)
-![Mata Mosquito - Em Jogo](/readmes/matamosquito2.png)
+![Mata Mosquito - Tela Inicial](/readmes/matamosquito.webp)
+![Mata Mosquito - Em Jogo](/readmes/matamosquito2.webp)
 
 ## 🚀 Funcionalidades
 

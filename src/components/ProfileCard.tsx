@@ -86,6 +86,13 @@ interface TiltEngine {
   cancel: () => void;
 }
 
+type ShellRect = {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+};
+
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   avatarUrl = "<Placeholder for avatar URL>",
   iconUrl = Icon,
@@ -109,6 +116,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
+  const shellRectRef = useRef<ShellRect>({ left: 0, top: 0, width: 1, height: 1 });
 
   const enterTimerRef = useRef<number | null>(null);
   const leaveRafRef = useRef<number | null>(null);
@@ -134,8 +142,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       const wrap = wrapRef.current;
       if (!shell || !wrap) return;
 
-      const width = shell.clientWidth || 1;
-      const height = shell.clientHeight || 1;
+      const { width, height } = shellRectRef.current;
 
       const percentX = clamp((100 / width) * x);
       const percentY = clamp((100 / height) * y);
@@ -228,11 +235,23 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     };
   }, [enableTilt]);
 
+  const measureShellRect = useCallback((): void => {
+    const shell = shellRef.current;
+    if (!shell) return;
+
+    const rect = shell.getBoundingClientRect();
+    shellRectRef.current = {
+      left: rect.left,
+      top: rect.top,
+      width: rect.width || 1,
+      height: rect.height || 1,
+    };
+  }, []);
+
   const getOffsets = (
     evt: PointerEvent,
-    el: HTMLElement,
   ): { x: number; y: number } => {
-    const rect = el.getBoundingClientRect();
+    const rect = shellRectRef.current;
     return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
   };
 
@@ -240,7 +259,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     (event: PointerEvent): void => {
       const shell = shellRef.current;
       if (!shell || !tiltEngine) return;
-      const { x, y } = getOffsets(event, shell);
+      const { x, y } = getOffsets(event);
       tiltEngine.setTarget(x, y);
     },
     [tiltEngine],
@@ -251,6 +270,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       const shell = shellRef.current;
       if (!shell || !tiltEngine) return;
 
+      measureShellRect();
       shell.classList.add("active");
       shell.classList.add("entering");
       if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
@@ -258,10 +278,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
         shell.classList.remove("entering");
       }, ANIMATION_CONFIG.ENTER_TRANSITION_MS);
 
-      const { x, y } = getOffsets(event, shell);
+      const { x, y } = getOffsets(event);
       tiltEngine.setTarget(x, y);
     },
-    [tiltEngine],
+    [tiltEngine, measureShellRect],
   );
 
   const handlePointerLeave = useCallback((): void => {
@@ -317,6 +337,12 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     const shell = shellRef.current;
     if (!shell) return;
 
+    measureShellRect();
+    const resizeObserver = new ResizeObserver(() => {
+      measureShellRect();
+    });
+    resizeObserver.observe(shell);
+
     const pointerMoveHandler = handlePointerMove as EventListener;
     const pointerEnterHandler = handlePointerEnter as EventListener;
     const pointerLeaveHandler = handlePointerLeave as EventListener;
@@ -350,13 +376,14 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     shell.addEventListener("click", handleClick);
 
     const initialX =
-      (shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET;
+      (shellRectRef.current.width || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET;
     const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
     tiltEngine.setImmediate(initialX, initialY);
     tiltEngine.toCenter();
     tiltEngine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION);
 
     return () => {
+      resizeObserver.disconnect();
       shell.removeEventListener("pointerenter", pointerEnterHandler);
       shell.removeEventListener("pointermove", pointerMoveHandler);
       shell.removeEventListener("pointerleave", pointerLeaveHandler);
@@ -666,7 +693,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               }}
             >
               <img
-                className="w-full h-full object-contain absolute left-1/2 top-1/2 will-change-transform transition-transform duration-[120ms] ease-out"
+                className="w-full h-full object-contain absolute left-1/2 top-1/2 will-change-transform transition-transform [transition-duration:120ms] ease-out"
                 src={avatarUrl}
                 alt={`${name || "User"} avatar`}
                 loading="lazy"

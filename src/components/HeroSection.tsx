@@ -1,11 +1,48 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WaveReveal from "@/components/animata/text/wave-reveal";
-import ASCIIText from "./ASCIIText";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+const ASCIIText = lazy(() => import("./ASCIIText"));
+
+type IdleWindow = Window & {
+  requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+  cancelIdleCallback?: (id: number) => void;
+};
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
+  const [shouldLoadAscii, setShouldLoadAscii] = useState(false);
+
+  useEffect(() => {
+    if (isMobile) {
+      setShouldLoadAscii(false);
+      return;
+    }
+
+    const win = window as IdleWindow;
+    let timeoutId: number | null = null;
+    let idleId: number | null = null;
+
+    if (typeof win.requestIdleCallback === "function") {
+      idleId = win.requestIdleCallback(
+        () => setShouldLoadAscii(true),
+        { timeout: 1800 },
+      );
+    } else {
+      timeoutId = window.setTimeout(() => setShouldLoadAscii(true), 1200);
+    }
+
+    return () => {
+      if (idleId != null && typeof win.cancelIdleCallback === "function") {
+        win.cancelIdleCallback(idleId);
+      }
+      if (timeoutId != null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [isMobile]);
 
   return (
     <section
@@ -18,15 +55,39 @@ const HeroSection = () => {
         <div
           className={`absolute inset-x-0 z-20 pointer-events-none ${isMobile ? "top-12 h-[340px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
         >
-          <ASCIIText
-            text={isMobile ? "BEM VINDO!" : "BEM VINDO AO MEU PORTFÓLIO"}
-            asciiFontSize={isMobile ? 6 : 8.5}
-            textFontSize={isMobile ? 300 : 600}
-            textColor="#fdf9f3"
-            planeBaseHeight={isMobile ? 4 : 8.3}
-            enableWaves={true}
-            textHeightScale={1.2}
-          />
+          {shouldLoadAscii ? (
+            <Suspense
+              fallback={
+                <div className="flex h-full items-center justify-center px-4 text-center">
+                  <p
+                    className={`font-bold tracking-[0.25em] uppercase ${isMobile ? "text-2xl" : "text-4xl md:text-5xl"}`}
+                    style={{ color: "#fdf9f3" }}
+                  >
+                    {isMobile ? "Bem vindo!" : "Bem vindo ao meu portfólio"}
+                  </p>
+                </div>
+              }
+            >
+              <ASCIIText
+                text={isMobile ? "BEM VINDO!" : "BEM VINDO AO MEU PORTFÓLIO"}
+                asciiFontSize={isMobile ? 6 : 8.5}
+                textFontSize={isMobile ? 300 : 600}
+                textColor="#fdf9f3"
+                planeBaseHeight={isMobile ? 4 : 8.3}
+                enableWaves={true}
+                textHeightScale={1.2}
+              />
+            </Suspense>
+          ) : (
+            <div className="flex h-full items-center justify-center px-4 text-center">
+              <p
+                className={`font-bold tracking-[0.25em] uppercase ${isMobile ? "text-2xl" : "text-4xl md:text-5xl"}`}
+                style={{ color: "#fdf9f3" }}
+              >
+                {isMobile ? "Bem vindo!" : "Bem vindo ao meu portfólio"}
+              </p>
+            </div>
+          )}
         </div>
         <div
           className={`${isMobile ? "h-[250px] sm:h-[290px]" : "h-[270px] md:h-[320px]"} w-full flex-shrink-0`}
