@@ -272,6 +272,7 @@ interface CanvAsciiOptions {
   textColor: string;
   planeBaseHeight: number;
   enableWaves: boolean;
+  textHeightScale: number;
 }
 
 class CanvAscii {
@@ -280,6 +281,7 @@ class CanvAscii {
   textFontSize: number;
   textColor: string;
   planeBaseHeight: number;
+  textHeightScale: number;
   container: HTMLElement;
   width: number;
   height: number;
@@ -298,12 +300,13 @@ class CanvAscii {
   animationFrameId: number = 0;
 
   constructor(options: CanvAsciiOptions, containerElem: HTMLElement, width: number, height: number) {
-    const { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves } = options;
+    const { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves, textHeightScale } = options;
     this.textString = text;
     this.asciiFontSize = asciiFontSize;
     this.textFontSize = textFontSize;
     this.textColor = textColor;
     this.planeBaseHeight = planeBaseHeight;
+    this.textHeightScale = textHeightScale;
     this.container = containerElem;
     this.width = width;
     this.height = height;
@@ -362,6 +365,7 @@ class CanvAscii {
     });
 
     this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.mesh.scale.set(1, this.textHeightScale, 1);
     this.scene.add(this.mesh);
   }
 
@@ -475,7 +479,8 @@ export default function ASCIIText({
   textFontSize = 200,
   textColor = '#fdf9f3',
   planeBaseHeight = 8,
-  enableWaves = true
+  enableWaves = true,
+  textHeightScale = 1
 }) {
   const containerRef = useRef(null);
   const asciiRef = useRef(null);
@@ -489,7 +494,7 @@ export default function ASCIIText({
 
     const createAndInit = async (container, w, h) => {
       const instance = new CanvAscii(
-        { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
+        { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves, textHeightScale },
         container,
         w,
         h
@@ -550,7 +555,7 @@ export default function ASCIIText({
         asciiRef.current = null;
       }
     };
-  }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves]);
+  }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves, textHeightScale]);
 
   return (
     <div

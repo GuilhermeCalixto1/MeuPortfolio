@@ -16,19 +16,20 @@ const HeroSection = () => {
 
       <>
         <div
-          className={`absolute inset-x-0 top-0 z-20 pointer-events-none ${isMobile ? "h-[320px] sm:h-[190px]" : "h-[300px] md:h-[340px]"}`}
+          className={`absolute inset-x-0 z-20 pointer-events-none ${isMobile ? "top-12 h-[340px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
         >
           <ASCIIText
             text={isMobile ? "BEM VINDO!" : "BEM VINDO AO MEU PORTFÓLIO"}
             asciiFontSize={isMobile ? 6 : 8.5}
             textFontSize={isMobile ? 300 : 600}
             textColor="#fdf9f3"
-            planeBaseHeight={isMobile ? 4 : 6.3}
+            planeBaseHeight={isMobile ? 4 : 8.3}
             enableWaves={true}
+            textHeightScale={1.2}
           />
         </div>
         <div
-          className={`${isMobile ? "h-[220px] sm:h-[260px]" : "h-[230px] md:h-[280px]"} w-full flex-shrink-0`}
+          className={`${isMobile ? "h-[250px] sm:h-[290px]" : "h-[270px] md:h-[320px]"} w-full flex-shrink-0`}
         />
       </>
 
