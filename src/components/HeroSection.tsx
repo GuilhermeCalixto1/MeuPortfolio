@@ -1,7 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WaveReveal from "@/components/animata/text/wave-reveal";
-import TextPressure from "./TextPressure";
 import ASCIIText from "./ASCIIText";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -15,32 +14,23 @@ const HeroSection = () => {
     >
       <div className="md:h-100 absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10 [mask-image:linear-gradient(to_bottom,black_0%,black_72%,transparent_100%)]" />
 
-      {isMobile ? (
-        <>
-          <div className="absolute inset-x-0 top-0 z-20 h-[320px] sm:h-[190px] pointer-events-none">
-            <ASCIIText
-              text="BEM VINDO!"
-              asciiFontSize={6}
-              textFontSize={300}
-              textColor="#fdf9f3"
-              planeBaseHeight={4}
-              enableWaves={true}
-            />
-          </div>
-          <div className="h-[220px] sm:h-[260px] w-full flex-shrink-0" />
-        </>
-      ) : (
-        <div className="w-full h-full md:h-80 mb-8">
-          <TextPressure
-            text="BEM VINDO AO MEU PORTFÓLIO"
-            className="gradient-text"
-            textColor="transparent"
-            width={false}
-            scale={true}
-            flex={false}
+      <>
+        <div
+          className={`absolute inset-x-0 top-0 z-20 pointer-events-none ${isMobile ? "h-[320px] sm:h-[190px]" : "h-[300px] md:h-[340px]"}`}
+        >
+          <ASCIIText
+            text={isMobile ? "BEM VINDO!" : "BEM VINDO AO MEU PORTFÓLIO"}
+            asciiFontSize={isMobile ? 6 : 8.5}
+            textFontSize={isMobile ? 300 : 600}
+            textColor="#fdf9f3"
+            planeBaseHeight={isMobile ? 4 : 6.3}
+            enableWaves={true}
           />
         </div>
-      )}
+        <div
+          className={`${isMobile ? "h-[220px] sm:h-[260px]" : "h-[230px] md:h-[280px]"} w-full flex-shrink-0`}
+        />
+      </>
 
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
 
