@@ -119,7 +119,24 @@ const ContactSection = () => {
                 <Mail size={20} className="text-primary" />
                 guicalixto123@hotmail.com
               </a>
-              {/* Resto dos seus links sociais... */}
+              <a
+                href="https://github.com/GuilhermeCalixto1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Github size={20} className="text-primary" />
+                github.com/GuilhermeCalixto1
+              </a>
+              <a
+                href="https://www.linkedin.com/in/guilhermecalixto1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Linkedin size={20} className="text-primary" />
+                linkedin.com/in/guilhermecalixto1
+              </a>
             </div>
           </div>
         </div>
