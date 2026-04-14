@@ -16,22 +16,17 @@ const HeroSection = () => {
   const [shouldLoadAscii, setShouldLoadAscii] = useState(false);
 
   useEffect(() => {
-    if (isMobile) {
-      setShouldLoadAscii(false);
-      return;
-    }
-
     const win = window as IdleWindow;
     let timeoutId: number | null = null;
     let idleId: number | null = null;
 
-    if (typeof win.requestIdleCallback === "function") {
+    if (!isMobile && typeof win.requestIdleCallback === "function") {
       idleId = win.requestIdleCallback(
         () => setShouldLoadAscii(true),
         { timeout: 1800 },
       );
     } else {
-      timeoutId = window.setTimeout(() => setShouldLoadAscii(true), 1200);
+      timeoutId = window.setTimeout(() => setShouldLoadAscii(true), isMobile ? 450 : 1200);
     }
 
     return () => {
@@ -53,7 +48,7 @@ const HeroSection = () => {
 
       <>
         <div
-          className={`absolute inset-x-0 z-20 pointer-events-none ${isMobile ? "top-12 h-[340px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
+          className={`absolute inset-x-0 z-20 pointer-events-none ${isMobile ? "top-4 h-[340px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
         >
           {shouldLoadAscii ? (
             <Suspense
