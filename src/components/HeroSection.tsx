@@ -48,7 +48,7 @@ const HeroSection = () => {
 
       <>
         <div
-          className={`absolute inset-x-0 z-20 pointer-events-none ${isMobile ? "top-4 h-[340px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
+          className={`absolute inset-x-0 z-20 pointer-events-none overflow-hidden ${isMobile ? "top-4 h-[300px] sm:h-[220px]" : "top-10 md:top-12 h-[320px] md:h-[360px]"}`}
         >
           {shouldLoadAscii ? (
             <Suspense
@@ -65,10 +65,10 @@ const HeroSection = () => {
             >
               <ASCIIText
                 text={isMobile ? "BEM VINDO!" : "BEM VINDO AO MEU PORTFÓLIO"}
-                asciiFontSize={isMobile ? 6 : 8.5}
-                textFontSize={isMobile ? 300 : 600}
+                asciiFontSize={isMobile ? 5.5 : 8.5}
+                textFontSize={isMobile ? 220 : 600}
                 textColor="#fdf9f3"
-                planeBaseHeight={isMobile ? 4 : 8.3}
+                planeBaseHeight={isMobile ? 3.4 : 8.3}
                 enableWaves={true}
                 textHeightScale={1.2}
               />

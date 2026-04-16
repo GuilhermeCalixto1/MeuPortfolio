@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import gerenciadorImg from "@/images/Captura de tela 2026-02-15 203832.webp";
 import orcamentoImg from "@/images/Captura de tela 2026-04-03 194318.webp";
-import crudImg from "@/images/Captura de tela 2026-04-03 194249.webp";
+import crudImg from "@/images/crud.png";
 import calculadoraImg from "@/images/Captura de tela 2026-04-03 195004.webp";
 import mosquitoImg from "@/images/Captura de tela 2026-04-03 194200.webp";
 import validacaoImg from "@/images/Captura de tela 2026-04-03 204123.webp";
