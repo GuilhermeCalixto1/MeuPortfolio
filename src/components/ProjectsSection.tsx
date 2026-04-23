@@ -9,15 +9,15 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import gerenciadorImg from "@/images/Captura de tela 2026-02-15 203832.webp";
-import orcamentoImg from "@/images/Captura de tela 2026-04-03 194318.webp";
+import gerenciadorImg from "@/images/gerenciador.png";
+import orcamentoImg from "@/images/orcamento.png";
 import crudImg from "@/images/crud.png";
-import calculadoraImg from "@/images/Captura de tela 2026-04-03 195004.webp";
-import mosquitoImg from "@/images/Captura de tela 2026-04-03 194200.webp";
-import validacaoImg from "@/images/Captura de tela 2026-04-03 204123.webp";
+import calculadoraImg from "@/images/calculadora.png";
+import mosquitoImg from "@/images/matamosquito.png";
+import validacaoImg from "@/images/validacao.png";
 import seitools1Img from "@/images/SeiTools1.webp";
 import gerenciadorReadme from "@/readmes/gerenciador.md?raw";
-import orcamentoReadme from "@/readmes/orcamentopessoal.md?raw";
+import orcamentoReadme from "@/readmes/orcamento.md?raw";
 import crudReadme from "@/readmes/controlecrud.md?raw";
 import calculadoraReadme from "@/readmes/calculadora.md?raw";
 import mosquitoReadme from "@/readmes/matamosquito.md?raw";
