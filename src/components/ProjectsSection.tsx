@@ -50,9 +50,10 @@ const projects: Project[] = [
     readme: gerenciadorReadme,
   },
   {
-    title: "Orçamento Pessoal",
-    description: "Aplicativo web para controle financeiro pessoal...",
-    tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+    title: "MONAPP",
+    description:
+      "O MonApp é uma evolução do projeto de Orçamento Pessoal, agora transformado em uma aplicação robusta de controle financeiro. Desenvolvido com uma estética Synthwave/Cyberpunk, o app permite não apenas registrar despesas, mas gerir múltiplas contas bancárias, faturas de cartão de crédito e visualizar projeções futuras.",
+    tags: ["HTML5", "CSS3", "Bootstrap", "React", "Rsbuild"],
     demo: "https://orcamento-pessoal-lilac.vercel.app/",
     code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
     image: orcamentoImg,
