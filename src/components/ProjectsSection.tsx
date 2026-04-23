@@ -9,15 +9,17 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import gerenciadorImg from "@/images/gerenciador.png";
+
 import orcamentoImg from "@/images/orcamento.png";
+import orcamento2Img from "@/images/orcamento2.png";
+import gerenciadorImg from "@/images/gerenciador.png";
 import crudImg from "@/images/crud.png";
 import calculadoraImg from "@/images/calculadora.png";
 import mosquitoImg from "@/images/matamosquito.png";
 import validacaoImg from "@/images/validacao.png";
 import seitools1Img from "@/images/SeiTools1.webp";
 import gerenciadorReadme from "@/readmes/gerenciador.md?raw";
-import orcamentoReadme from "@/readmes/orcamento.md?raw";
+import orcamentoReadme from "@/readmes/orcamentopessoal.md?raw";
 import crudReadme from "@/readmes/controlecrud.md?raw";
 import calculadoraReadme from "@/readmes/calculadora.md?raw";
 import mosquitoReadme from "@/readmes/matamosquito.md?raw";
@@ -49,13 +51,15 @@ const projects: Project[] = [
   },
   {
     title: "Orçamento Pessoal",
-    description:
-      "Aplicativo web para controle financeiro pessoal com cadastro, consulta e gerenciamento de despesas. Utiliza POO em JavaScript e persistência com LocalStorage.",
+    description: "Aplicativo web para controle financeiro pessoal...",
     tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
     demo: "https://orcamento-pessoal-lilac.vercel.app/",
     code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
     image: orcamentoImg,
-    readme: orcamentoReadme,
+    // Aqui fazemos a "mágica" de trocar os caminhos do Markdown pelas imagens importadas
+    readme: orcamentoReadme
+      .replace("/readmes/orcamento.webp", orcamentoImg)
+      .replace("/readmes/orcamento2.webp", orcamento2Img),
   },
   {
     title: "Controle de Fornecedores (CRUD)",

@@ -4,7 +4,7 @@ import ProfileCard from "./ProfileCard";
 
 const highlights = [
   { icon: GraduationCap, label: "UBM", desc: "Engenharia de Software" },
-  { icon: Wrench, label: "4 anos", desc: "experiência industrial (CSN)" },
+  { icon: Wrench, label: "4 anos", desc: "Experiência industrial (CSN)" },
   { icon: Target, label: "Foco", desc: "React & Web Moderno" },
 ];
 
