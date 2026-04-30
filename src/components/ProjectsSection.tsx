@@ -9,12 +9,14 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import gerenciadorImg from "@/images/Captura de tela 2026-02-15 203832.webp";
-import orcamentoImg from "@/images/Captura de tela 2026-04-03 194318.webp";
+
+import orcamentoImg from "@/images/orcamento.png";
+import orcamento2Img from "@/images/orcamento2.png";
+import gerenciadorImg from "@/images/gerenciador.png";
 import crudImg from "@/images/crud.png";
-import calculadoraImg from "@/images/Captura de tela 2026-04-03 195004.webp";
-import mosquitoImg from "@/images/Captura de tela 2026-04-03 194200.webp";
-import validacaoImg from "@/images/Captura de tela 2026-04-03 204123.webp";
+import calculadoraImg from "@/images/calculadora.png";
+import mosquitoImg from "@/images/matamosquito.png";
+import validacaoImg from "@/images/validacao.png";
 import seitools1Img from "@/images/SeiTools1.webp";
 import gerenciadorReadme from "@/readmes/gerenciador.md?raw";
 import orcamentoReadme from "@/readmes/orcamentopessoal.md?raw";
@@ -48,14 +50,17 @@ const projects: Project[] = [
     readme: gerenciadorReadme,
   },
   {
-    title: "Orçamento Pessoal",
+    title: "MONAPP",
     description:
-      "Aplicativo web para controle financeiro pessoal com cadastro, consulta e gerenciamento de despesas. Utiliza POO em JavaScript e persistência com LocalStorage.",
-    tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
+      "O MonApp é uma evolução do projeto de Orçamento Pessoal, agora transformado em uma aplicação robusta de controle financeiro. Desenvolvido com uma estética Synthwave/Cyberpunk, o app permite não apenas registrar despesas, mas gerir múltiplas contas bancárias, faturas de cartão de crédito e visualizar projeções futuras.",
+    tags: ["HTML5", "CSS3", "Bootstrap", "React", "Rsbuild"],
     demo: "https://orcamento-pessoal-lilac.vercel.app/",
     code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
     image: orcamentoImg,
-    readme: orcamentoReadme,
+    // Aqui fazemos a "mágica" de trocar os caminhos do Markdown pelas imagens importadas
+    readme: orcamentoReadme
+      .replace("/readmes/orcamento.webp", orcamentoImg)
+      .replace("/readmes/orcamento2.webp", orcamento2Img),
   },
   {
     title: "Controle de Fornecedores (CRUD)",
