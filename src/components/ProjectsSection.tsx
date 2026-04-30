@@ -52,8 +52,8 @@ const projects: Project[] = [
     description:
       "Aplicativo web para controle financeiro pessoal com cadastro, consulta e gerenciamento de despesas. Utiliza POO em JavaScript e persistência com LocalStorage.",
     tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript"],
-    demo: "https://mon-app-peach.vercel.app",
-    code: "https://github.com/GuilhermeCalixto1/MonApp",
+    demo: "https://orcamento-pessoal-lilac.vercel.app/",
+    code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
     image: orcamentoImg,
     readme: orcamentoReadme,
   },
