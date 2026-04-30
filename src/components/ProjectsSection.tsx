@@ -54,8 +54,8 @@ const projects: Project[] = [
     description:
       "O MonApp é uma evolução do projeto de Orçamento Pessoal, agora transformado em uma aplicação robusta de controle financeiro. Desenvolvido com uma estética Synthwave/Cyberpunk, o app permite não apenas registrar despesas, mas gerir múltiplas contas bancárias, faturas de cartão de crédito e visualizar projeções futuras.",
     tags: ["HTML5", "CSS3", "Bootstrap", "React", "Rsbuild"],
-    demo: "https://orcamento-pessoal-lilac.vercel.app/",
-    code: "https://github.com/GuilhermeCalixto1/OrcamentoPessoal",
+    demo: "https://mon-app-peach.vercel.app",
+    code: "https://github.com/GuilhermeCalixto1/MonApp",
     image: orcamentoImg,
     // Aqui fazemos a "mágica" de trocar os caminhos do Markdown pelas imagens importadas
     readme: orcamentoReadme
@@ -78,7 +78,7 @@ const projects: Project[] = [
       "Calculadora funcional e responsiva com tema Dark/Purple, CSS Grid, tratamento de erros e design adaptável a diferentes tamanhos de tela.",
     tags: ["HTML5", "CSS3", "JavaScript"],
     demo: "https://projeto-calculadora-pied-nine.vercel.app",
-    code: "https://github.com/GuilhermeCalixto1",
+    code: "https://github.com/GuilhermeCalixto1/Projeto-Calculadora",
     image: calculadoraImg,
     readme: calculadoraReadme,
   },
