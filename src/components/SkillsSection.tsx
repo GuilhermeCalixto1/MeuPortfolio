@@ -12,6 +12,8 @@ import githubLogo from "@/images/github.png";
 import supabaseLogo from "@/images/supabase.png";
 import viteLogo from "@/images/vite.png";
 import vercelLogo from "@/images/vercel.png";
+import dockerlogo from "@/images/docker.png";
+import mongodblogo from "@/images/mongodb.png";
 
 const skillGroups = [
   {
@@ -29,7 +31,7 @@ const skillGroups = [
   },
   {
     category: "Ferramentas",
-    skills: ["Git", "GitHub", "Supabase", "Vite", "Vercel"],
+    skills: ["Git", "GitHub", "Supabase", "Vite", "Vercel", "Docker", "MongoDB"],
   },
   {
     category: "Metodologias",
@@ -51,6 +53,8 @@ const skillImageMap: Record<string, string> = {
   Supabase: supabaseLogo,
   Vite: viteLogo,
   Vercel: vercelLogo,
+  Docker: dockerlogo,
+  MongoDB: mongodblogo,
 };
 
 const loopCategories = new Set(["Linguagens", "Ferramentas"]);
