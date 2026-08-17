@@ -10,6 +10,8 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
+// Importações de Imagens
+import botImg from "@/images/botprecos.png"; // <-- Imagem do Bot adicionada
 import orcamentoImg from "@/images/orcamento.png";
 import orcamento2Img from "@/images/orcamento2.png";
 import gerenciadorImg from "@/images/gerenciador.png";
@@ -18,6 +20,10 @@ import calculadoraImg from "@/images/calculadora.png";
 import mosquitoImg from "@/images/matamosquito.png";
 import validacaoImg from "@/images/validacao.png";
 import seitools1Img from "@/images/SeiTools1.webp";
+import botVideo from "@/images/videobot.mp4";
+
+// Importações dos READMEs
+import botReadme from "@/readmes/botprecos.md?raw"; // <-- README do Bot adicionado
 import gerenciadorReadme from "@/readmes/gerenciador.md?raw";
 import orcamentoReadme from "@/readmes/orcamentopessoal.md?raw";
 import crudReadme from "@/readmes/controlecrud.md?raw";
@@ -39,6 +45,16 @@ type Project = {
 const ProjectReadmeContent = lazy(() => import("./ProjectReadmeContent"));
 
 const projects: Project[] = [
+  {
+    title: "Bot Comparador de Preços (Telegram)",
+    description:
+      "Bot assíncrono para o Telegram que realiza Web Scraping simultâneo na Amazon, Mercado Livre e Americanas. Construído com resiliência contra bloqueios (WAF/Anti-bot), tratamento de layouts dinâmicos e filtros orgânicos.",
+    tags: ["Python", "Playwright", "asyncio", "Telegram API"],
+    demo: botVideo, // Dica: Se você gravar um vídeo dele rodando, pode trocar pelo link do vídeo/LinkedIn!
+    code: "https://github.com/GuilhermeCalixto1/BotDePrecos",
+    image: botImg,
+    readme: botReadme,
+  },
   {
     title: "Gerenciador de Tarefas React",
     description:
