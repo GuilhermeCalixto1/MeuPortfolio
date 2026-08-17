@@ -36,7 +36,7 @@ const AboutSection = () => {
           <div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Olá! Meu nome é Guilherme Calixto, tenho 26 anos e sou estudante
-              no 2º semestre de Engenharia de Software pela UBM. Estou em
+              no 3º semestre de Engenharia de Software pela UBM. Estou em
               transição de carreira vindo da área industrial — atuo há 4 anos na
               CSN como mecânico, experiência que me proporcionou uma base sólida
               de disciplina, resolução de problemas e trabalho em equipe.
@@ -45,8 +45,8 @@ const AboutSection = () => {
               Busco minha primeira oportunidade na área de TI para aplicar essa
               maturidade profissional somada aos meus conhecimentos técnicos.
               Atualmente, foco meus estudos em React e desenvolvimento Web
-              Moderno, criando projetos funcionais com React, JavaScript,
-              Bootstrap e HTML.
+              Moderno, criando projetos funcionais com React e Typescript e também no 
+              desenvolvimento de automações com Python e ferramentas low-code de RPA
             </p>
 
             <div className="grid grid-cols-3 gap-4">
